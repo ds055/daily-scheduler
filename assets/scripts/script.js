@@ -10,22 +10,37 @@ const hourRows = $(".hour");
 $(function () {
   init();
 
+  // on-page-load function
   function init() {
-    // Displays current date to top of page
+    // displays current date to top of page
     dateDisplay.text(dayjs().format("MM/DD/YYYY"));
 
-      // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
+    // get current hour
+    var currHour = dayjs().hour();
     
+    // add class based on row id compared to current hour
+    for (const row of hourRows) {
+      // takes row id and slices to create int for comparison
+      var currRowHr = parseInt($(row).parent().prop("id").slice(5));
+      // if current hour matches row id, set class to present
+      if (currRowHr === currHour) {
+        $(row).parent().addClass("present");
+      // if current hour is greater than row id, set class to future
+      } else if(currRowHr > currHour) {
+        $(row).parent().addClass("future");
+      }
+      // final option: set class to past
+      else {
+        $(row).parent().addClass("past");
+      }
+    }
+    
+  // load saved data; if none exists, create empty array
+  var workDaySchArr = JSON.parse(localStorage.getItem("workDaySchedule")) || [];
 
-
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  
+  for (const event of workDaySchArr){
+    
+  }
   
   }
 
@@ -43,7 +58,6 @@ $(function () {
 
     // get text from input area
     const schEvent = $(btnClicked).siblings(".description").val() || $(btnClicked).parent().siblings(".description").val();
-    console.log(schEvent)
 
     //get saved schedule
     var workDaySchArr = JSON.parse(localStorage.getItem("workDaySchedule")) || [];
@@ -65,7 +79,4 @@ $(function () {
     // place new array in local storage
     localStorage.setItem("workDaySchedule", JSON.stringify(workDaySchArr));
   }
-
-  
-
 });
