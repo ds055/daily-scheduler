@@ -1,3 +1,19 @@
+header {
+  background-color: rgb(108, 108, 235);
+  color: white;
+  text-shadow: black 0px 3px 6px;
+}
+
+#idea {
+  width: calc(50px + 2vw);
+  height: calc(75px + 2vw)
+}
+
+#currentDay {
+  font-size: calc(16px + 0.390625vw)
+}
+
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -54,10 +70,9 @@ textarea {
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
 
 .saveBtn:active {
-  background-color: green;
+  background-color: #0a4d5c;
 }
