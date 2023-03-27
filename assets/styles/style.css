@@ -4,15 +4,10 @@ header {
   text-shadow: black 0px 3px 6px;
 }
 
-#idea {
-  width: calc(50px + 2vw);
-  height: calc(75px + 2vw)
-}
-
+/* Font specifications for Current Day in Header */
 #currentDay {
   font-size: calc(16px + 0.390625vw)
 }
-
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -32,6 +27,7 @@ textarea {
   white-space: pre-wrap;
 }
 
+/* Where hours are displayed in left column */
 .time-block {
   border-radius: 15px;
 }
@@ -46,16 +42,19 @@ textarea {
   border-top: 1px dashed #000000;
 }
 
+/* Background color for past hours */
 .past {
   background-color: #d3d3d3;
   color: white;
 }
 
+/* Background color for current hour */
 .present {
   background-color: #ff6961;
   color: white;
 }
 
+/* Background color for future hours */
 .future {
   background-color: #77dd77;
   color: white;
@@ -73,6 +72,7 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
+/* Added color to button to show user's successful click */
 .saveBtn:active {
   background-color: #0a4d5c;
 }

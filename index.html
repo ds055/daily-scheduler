@@ -23,6 +23,7 @@
   </head>
 
   <body>
+    <!-- Header: displays current date -->
     <header class="row p-3 mb-4 border-5 border-bottom border-dark text-center">
       <h1 class="display-3">Today's To-Dos</h1>
       <p class="lead">Leagues better than a Remembrall</p>
@@ -30,6 +31,7 @@
     </header>
     <div class="container-lg px-5">
 
+      <!-- Time blocks change color to reflect if in a past, present, or future hour state -->
       <div id="hour-9" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-5">9AM</div>
         <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
@@ -101,10 +103,9 @@
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
-
-      <footer class="row py-5">
-
-      </footer>
+      
+      <!-- Footer added to create space at bottom of page -->
+      <footer class="row py-5"></footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script
